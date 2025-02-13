@@ -44,7 +44,7 @@ This will launch both the Vite development server and the Tauri development wind
 To create a production build:
 
 ```bash
-pnpm tauribuild
+pnpm tauri build
 ```
 
 The built application will be available in the `src-tauri/target/release` directory.
