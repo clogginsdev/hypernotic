@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ProseMirror {
+  @apply min-h-[500px] p-4 prose prose-base lg:prose-lg mx-auto focus:outline-none;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  @apply text-gray-400 float-left h-0 pointer-events-none;
+  content: attr(data-placeholder);
+}
+
+/* Dark mode support */
+.dark .ProseMirror {
+  @apply prose-invert;
+}
+
+/* Code block styling */
+
+/* Link styling */
+.ProseMirror a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+/* Bubble menu icons */
+.ProseMirror-menuitem svg {
+  @apply stroke-gray-700 dark:stroke-gray-300;
+}
+
+/* Selected text highlighting */
+.ProseMirror-selectednode {
+  @apply outline-2 outline-blue-500;
+}
+
+.ProseMirror p.is-empty::before {
+  @apply text-gray-400 float-left h-0 pointer-events-none;
+  content: attr(data-placeholder);
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "main-capability",
+  "description": "Capability for the main window",
+  "windows": ["main"],
+  "permissions": [
+    "shell:default",
+    "shell:allow-open",
+    "core:window:default",
+    "core:window:allow-start-dragging",
+    "dialog:default",
+    "dialog:allow-open",
+    "dialog:allow-save",
+    "fs:default",
+    "fs:read-all",
+    "fs:write-all",
+    "fs:allow-read-dir",
+    "fs:allow-remove",
+    "fs:allow-mkdir",
+    "fs:allow-write-file",
+    "core:path:default",
+    "core:path:allow-normalize",
+    "core:path:allow-join",
+    "fs:allow-home-read",
+    "fs:allow-home-read-recursive",
+    "fs:allow-home-meta",
+    "fs:allow-home-meta-recursive",
+    "fs:scope-home",
+    "fs:scope-home-index",
+    "core:event:default",
+    "core:event:allow-emit",
+    "core:event:allow-listen",
+    "clipboard-manager:allow-write-text",
+    "clipboard-manager:allow-read-text",
+    {
+      "identifier": "fs:scope",
+      "allow": [
+        { "path": "$HOME/**", "scope": "read" },
+        { "path": "$DOCUMENT/**", "scope": "read" },
+        { "path": "$DESKTOP/**", "scope": "read" },
+        { "path": "$DOWNLOAD/**", "scope": "read" }
+      ]
+    },
+    {
+      "identifier": "fs:allow-read-dir",
+      "allow": [{ "path": "$HOME/**", "scope": "read" }]
+    },
+    {
+      "identifier": "fs:allow-read-file",
+      "allow": [{ "path": "$HOME/**/*.md", "scope": "read" }]
+    }
+  ]
+}
